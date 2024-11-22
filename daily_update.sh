@@ -11,10 +11,10 @@ COMMIT_MESSAGE=$(date "+%Y-%m-%d %H:%M:%S")
 git checkout "$BRANCH"
 git fetch origin "$BRANCH"
 
-git add .
 
 #Commit and push if there are any changes
 if [[ -n $(git status --porcelain) ]]; then
+	git add .
 	git commit -m "$COMMIT_MESSAGE"
 	git push origin "$BRANCH"
 	echo "Changes committed and pushed successfully to the $BRANCH branch."
