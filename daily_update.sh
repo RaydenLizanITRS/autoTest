@@ -13,11 +13,9 @@ git fetch origin "$BRANCH"
 
 git add .
 
-echo "Here we go"
 
 if [[ -n $(git status --porcelain) ]]; then
 	git commit -m "$COMMIT_MESSAGE"
-	echo "Just committed"
 	git push origin "$BRANCH"
 else
 	echo "No changes to commit, skipping push."
